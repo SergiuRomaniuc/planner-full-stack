@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <a href="./html/calendar.html">Go to Calendar</a>
+    <h1>Planner</h1>
+    <div class="planner">
+
+        <div class="datetime-container">
+
+            <div class="calendar">
+
+                    <h2>Date</h2>
+                    <input type="date" id="selected-date" />
+
+            </div>
+
+            <div class="time-container">
+                
+                <h2 class="time-title">Time</h2>
+
+                <div class="starts-container">
+                    <p>Starts</p>
+                    <input type="time" id="start-time" />
+                </div>
+
+                <div class="ends-container">
+                    <p>Ends</p>
+                    <input type="time" id="end-time" />
+                </div> 
+
+            </div> 
+        </div>
+
+
+        <div class="plans">
+            <h2>Plans</h2>
+
+        
+            <form id="plan-form">
+            <input
+            type="text"
+            id="plan-input"
+            placeholder="Add a plan..."
+            required
+            />
+            <button type="submit" id="add-button">Add</button>
+            </form>
+        </div>
+    </div>
+
+<input
+  type="text"
+  id="search-input"
+  placeholder="Search plans..."
+/>
+
+
+<ul id="plans-list"></ul>
+
+
+<div class="form-popup">
+    <form id="form-edit">
+        <h2>Edit Plan</h2>
+
+        
+        <label for="edit-date-input-popup">Date:</label>
+        <input
+        type="date"
+        id="edit-date-input-popup"
+        required
+        />
+        
+        <label for="edit-start-time-input-popup">Start Time:</label>
+        <input
+        type="time"
+        id="edit-start-time-input-popup"
+        required
+        />
+        
+        <label for="edit-end-time-input-popup">End Time:</label>
+        <input
+        type="time"
+        id="edit-end-time-input-popup"
+        required
+        />
+        
+        <label for="edit-plan-input-popup">Plan:</label>
+        <input
+        type="text"
+        id="edit-plan-input-popup"
+        required
+        />
+
+
+        <button type="submit" id="save-button-popup">Save</button>
+        <button type="button" id="cancel-button-popup">Cancel</button>
+    </form>
+</div>
+
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
