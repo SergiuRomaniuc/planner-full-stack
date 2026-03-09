@@ -28,16 +28,7 @@ const server = http.createServer((req, res) => {
 
     res.setHeader('Content-Type', contentType);
 
-    // switch(req.url) {
-    //   case '/':
-    //     path += 'index.html'
-    //     console.log('index');
-    //     break;
-    //   case '/calendar':
-    //     path += 'html/calendar.html'
-    //     break;
-
-    // }
+ 
     console.log(filePath);
     console.log("URL: " + req.url);
 
@@ -60,3 +51,17 @@ server.listen(3000, 'localhost', () => {
   console.log('listening to requests on port 3000');
 })
 
+
+const mysql = require('mysql2');
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '1234567890',
+  database: 'planner'
+})
+
+connection.connect((err) => {
+  if(err) throw err;
+  console.log('Connected to MySQL database');
+})
