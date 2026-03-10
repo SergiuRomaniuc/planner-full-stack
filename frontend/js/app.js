@@ -170,4 +170,27 @@ dom.cancelPopupButton.addEventListener('click', () => {
 });
 
 
+function geatherDataFromFields() {
+    const dateValue = dom.dataInput.value;
+    const planValue = dom.planInput.value.trim();
+    const startTime = dom.startTimeInput.value;
+    const endTime = dom.endTimeInput.value;
+
+    return {dateValue,  startTime, endTime, planValue, usrID : 1};
+}
+
+async function fetchData() {
+    const response = await fetch("/api/plans", {
+        method: "POST",
+        headers: { "Content-Type" : "application/json"},
+        body: JSON.stringify(geatherDataFromFields())
+
+    });
+
+    const result = await response.json();
+    console.log(result);
+ }
+
+dom.addButton.addEventListener('click', fetchData);
+
 console.log(localStorage);
