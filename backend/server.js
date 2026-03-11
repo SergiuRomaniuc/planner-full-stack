@@ -61,6 +61,10 @@ const server = http.createServer((req, res) => {
       return;
     }
 
+    if(req.method === "POST" && req.url === "/api/create-user") {
+      
+    }
+
 
   // routing for get methods
 
